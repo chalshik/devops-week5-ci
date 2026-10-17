@@ -61,7 +61,7 @@ Tests:
 
 | Cache | Where | What it saves |
 | --- | --- | --- |
-| Go modules and build cache | `actions/setup-go` with `cache: true`, keyed on `go.sum`/`go.mod` | Downloaded modules (`~/go/pkg/mod`) and compiled packages (`~/.cache/go-build`) are restored, so `go vet` and `go test` only recompile what changed |
+| Go modules and build cache | `actions/setup-go` with `cache: true`, keyed on `go.mod` (`cache-dependency-path`, since the app has no third-party modules and no `go.sum`) | Downloaded modules (`~/go/pkg/mod`) and compiled packages (`~/.cache/go-build`) are restored, so `go vet` and `go test` only recompile what changed |
 | Docker layer cache | `cache-from/cache-to: type=gha` in `docker/build-push-action` | Base images and the `go mod download` layer are reused between runs; only the layers after `COPY main.go` rebuild on a code change |
 
 On a warm cache the `lint` and `test` jobs skip module downloads and most
