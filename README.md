@@ -11,6 +11,7 @@ this folder is also published as its own repository, where the pipeline runs:
 
 - Repository: <https://github.com/chalshik/devops-week5-ci>
 - Workflow runs: <https://github.com/chalshik/devops-week5-ci/actions/workflows/ci.yml>
+- Green run: <https://github.com/chalshik/devops-week5-ci/actions/runs/39036034747>
 
 See [CI.md](CI.md) for what each job does, the triggers, and how caching helps.
 
